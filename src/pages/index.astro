@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.jpg';
+import lashes from '../assets/lashes.jpg';
+import nails from '../assets/nails.jpg';
+import design from '../assets/design.jpg';
+import interior from '../assets/interior.jpg';
+import '../styles/global.css';
+const booking = 'https://n242277.yclients.com/';
+const map = 'https://2gis.ru/yakutsk/firm/70000001020753520';
+const services = [
+ {n:'01',title:'Ресницы',en:'THE ART OF A LOOK',text:'Выразительный взгляд. От деликатного акцента до вашего любимого объёма.',image:lashes},
+ {n:'02',title:'Маникюр и педикюр',en:'BEAUTY IN DETAILS',text:'Цвет, форма и маленькие детали, которые задают настроение.',image:nails},
+ {n:'03',title:'Брови и перманент',en:'YOUR NATURAL BEAUTY',text:'Акценты, которые подчёркивают вашу индивидуальность.',image:portrait},
+];
+const works = [{image:lashes,label:'Выразительный взгляд',type:'Ресницы'},{image:design,label:'Маленькое произведение',type:'Дизайн ногтей'},{image:nails,label:'Красота в деталях',type:'Маникюр'},{image:interior,label:'Время для себя',type:'Пространство Unika'}];
+---
+<!doctype html>
+<html lang="ru">
+ <head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex,nofollow"/>
+  <meta name="description" content="Демонстрационная концепция сайта Unika beauty в Якутске. Красота в деталях, время для себя."/>
+  <meta name="theme-color" content="#eeece5"/><title>UNIKA beauty — время быть собой</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+ </head>
+ <body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <div class="intro" aria-hidden="true"><div class="intro-inner"><span class="intro-word">UNIKA<span class="intro-star">✳</span></span><span class="eyebrow">BEAUTY IS PERSONAL</span></div><span class="intro-bottom">ЯКУТСК · BEAUTY STUDIO</span></div>
+  <header class="header">
+   <a class="logo" href="#" aria-label="Unika beauty — главная">UNIKA<span>beauty</span></a>
+   <nav aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#works">Наши работы</a><a href="#contacts">Контакты</a></nav>
+   <a class="header-book" href={booking} target="_blank" rel="noopener">Записаться <span>↗</span></a>
+  </header>
+  <main id="main">
+   <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+     <div class="eyebrow hero-enter"><span class="dot"></span> САЛОН КРАСОТЫ В ЯКУТСКЕ</div>
+     <h1 id="hero-title" class="hero-enter">Красиво.<br/>Быть <em>собой.</em></h1>
+     <p class="hero-description hero-enter">Ваши любимые бьюти-ритуалы.<br/>Место, где можно замедлиться<br/>и уделить время себе.</p>
+     <a class="button hero-enter" href={booking} target="_blank" rel="noopener">Выбрать время <span>↗</span></a>
+     <a class="rating hero-enter" href={map+'/tab/reviews'} target="_blank" rel="noopener"><span class="rating-value">4.9<span>★</span></span><span>Нас выбирают и возвращаются<br/><small>759 оценок в 2ГИС ↗</small></span></a>
+    </div>
+    <div class="hero-visual">
+     <div class="photo-frame"><Image src={portrait} alt="Бьюти-образ из портфолио Unika beauty" widths={[480,720,1000]} sizes="(max-width: 700px) 90vw, 48vw" format="webp" quality={85} loading="eager" fetchpriority="high" class="hero-photo"/><div class="photo-shade"></div><span class="image-note">YOUR BEAUTY.<br/>YOUR RULES.</span><span class="photo-index">01 / UNIKA BEAUTY</span></div>
+     <div class="round-note" aria-hidden="true"><span>ВРЕМЯ ДЛЯ СЕБЯ</span><b>✳</b><span>UNIKA BEAUTY</span></div>
+     <span class="side-note">ИНДИВИДУАЛЬНОСТЬ В КАЖДОЙ ДЕТАЛИ</span>
+    </div>
+    <div class="hero-bottom"><span>Пояркова, 20 · 2 этаж</span><a href="#services">Знакомство с Unika <span>↓</span></a></div>
+   </section>
+   <div class="ticker" aria-hidden="true"><div>РЕСНИЦЫ <i>✳</i> МАНИКЮР <i>✳</i> БРОВИ <i>✳</i> ПЕДИКЮР <i>✳</i> ПЕРМАНЕНТ <i>✳</i> РЕСНИЦЫ <i>✳</i> МАНИКЮР <i>✳</i> БРОВИ <i>✳</i> ПЕДИКЮР <i>✳</i> ПЕРМАНЕНТ <i>✳</i></div></div>
+   <section id="services" class="section services">
+    <div class="section-top reveal"><span class="eyebrow">01 / БЬЮТИ-РИТУАЛЫ</span><span class="small-note">МАЛЕНЬКИЕ ПЕРЕМЕНЫ. ВАШЕ НАСТРОЕНИЕ.</span></div>
+    <div class="section-heading reveal"><h2>Красота начинается<br/>с <em>вашего желания.</em></h2><p>Выберите свой ритуал.<br/>Актуальные услуги, стоимость и свободное<br class="desktop"/> время — в онлайн-записи.</p></div>
+    <div class="service-list">
+     {services.map(s=><a class="service-row reveal" href={booking} target="_blank" rel="noopener"><span class="service-number">{s.n}</span><div class="service-name"><span class="eyebrow">{s.en}</span><h3>{s.title}</h3></div><p>{s.text}</p><span class="service-arrow">↗</span><Image src={s.image} alt="" width={200} format="webp" loading="lazy" class="service-preview"/></a>)}
+    </div>
+   </section>
+   <section id="works" class="section works">
+    <div class="section-top reveal"><span class="eyebrow">02 / РАБОТЫ И АТМОСФЕРА</span><span class="small-note">НАСТОЯЩАЯ UNIKA</span></div>
+    <div class="section-heading reveal"><h2>Детали, в которые<br/>можно <em>влюбиться.</em></h2><p>Работы и пространство студии.<br/>Найдите своё вдохновение.</p></div>
+    <div class="gallery">{works.map((w,i)=><figure class={`gallery-item gallery-${i} reveal`}><button class="gallery-open" aria-label={`Увеличить: ${w.label}`} data-caption={w.label}><Image src={w.image} alt={w.label+' — Unika beauty'} widths={[400,700,1000]} sizes="(max-width: 700px) 90vw, 42vw" quality={83} format="webp" loading="lazy"/><span class="zoom">↗</span></button><figcaption><span>{w.label}</span><small>{w.type}</small></figcaption></figure>)}</div>
+    <a class="text-link reveal" href={map+'/tab/photos'} target="_blank" rel="noopener">Больше фотографий в 2ГИС <span>↗</span></a>
+   </section>
+   <section id="contacts" class="section contacts">
+    <div class="section-top reveal"><span class="eyebrow">03 / ДО ВСТРЕЧИ В UNIKA</span><span class="small-note">ВАШЕ ВРЕМЯ ДЛЯ СЕБЯ</span></div>
+    <div class="contact-grid"><div class="reveal"><h2>Оставьте время<br/>для <em>красивого.</em></h2><p>Выберите услугу, мастера и удобное время.<br/>Мы будем ждать вас в Unika.</p><a class="button light" href={booking} target="_blank" rel="noopener">Записаться онлайн <span>↗</span></a></div><div class="contact-details reveal"><div><span class="eyebrow">МЫ РЯДОМ</span><a href={map} target="_blank" rel="noopener">Якутск, Пояркова, 20 <span>↗</span></a><p>2 этаж · по предварительной записи</p></div><div><span class="eyebrow">НА СВЯЗИ</span><a href="tel:+79681546888">+7 (968) 154-68-88</a><div class="socials"><a href="https://wa.me/79681546888" target="_blank" rel="noopener">WhatsApp ↗</a><a href="https://vk.com/club211347468" target="_blank" rel="noopener">ВКонтакте ↗</a></div></div><a class="route" href="https://2gis.ru/yakutsk/directions/points/%7C129.72781%2C62.033743%3B70000001020753520" target="_blank" rel="noopener"><span>↗</span><div>Построить маршрут<small>Открыть в 2ГИС</small></div></a></div></div>
+    <div class="footer-brand" aria-hidden="true">UNIKA<span>✳</span></div>
+    <footer><span>© 2026 UNIKA BEAUTY</span><span>Демонстрационная концепция · не официальный сайт</span><button id="replay">Повторить вступление ↺</button></footer>
+   </section>
+  </main>
+  <dialog id="lightbox" aria-label="Просмотр фотографии"><button class="close-modal" aria-label="Закрыть фотографию">×</button><img src="" alt=""/><p></p></dialog>
+  <script>
+   import gsap from 'gsap';
+   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+   const intro = document.querySelector<HTMLElement>('.intro');
+   const playIntro = () => {
+    if (!intro || reduced) return;
+    gsap.set(intro,{display:'grid',yPercent:0});
+    gsap.timeline().fromTo('.intro-word',{y:35,opacity:0},{y:0,opacity:1,duration:.5,ease:'power2.out'}).to(intro,{yPercent:-100,duration:.85,ease:'power3.inOut'},.55).set(intro,{display:'none'}).fromTo('.hero-enter',{y:22,opacity:0},{y:0,opacity:1,duration:.65,stagger:.08,ease:'power2.out'},.9).fromTo('.hero-photo',{scale:1.09},{scale:1,duration:1.4,ease:'power2.out'},.65);
+   };
+   let seen=false;try{seen=sessionStorage.getItem('unika-intro')==='1';sessionStorage.setItem('unika-intro','1')}catch{}
+   if(!seen&&!reduced)playIntro();
+   document.querySelector('#replay')?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'instant'});playIntro()});
+   if(!reduced){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){gsap.fromTo(entry.target,{y:30,opacity:0},{y:0,opacity:1,duration:.8,ease:'power2.out'});observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}
+   const dialog=document.querySelector<HTMLDialogElement>('#lightbox')!;
+   document.querySelectorAll<HTMLButtonElement>('.gallery-open').forEach(button=>button.addEventListener('click',()=>{const img=button.querySelector('img')!;const large=dialog.querySelector('img')!;large.src=img.currentSrc;large.alt=img.alt;dialog.querySelector('p')!.textContent=button.dataset.caption||'';dialog.showModal();}));
+   dialog.querySelector('button')?.addEventListener('click',()=>dialog.close());
+   dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+  </script>
+ </body>
+</html>
