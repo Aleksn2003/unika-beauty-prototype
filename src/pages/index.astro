@@ -90,8 +90,16 @@ const works = [{image:worksLashes,label:'Выразительный взгляд
   </main>
   <button class="back-top" aria-label="Прокрутить наверх" hidden><Icon name="up"/></button>
   <dialog id="lightbox" aria-label="Просмотр фотографии"><button class="close-modal" aria-label="Закрыть фотографию"><Icon name="close"/></button><img src="" alt=""/><p></p></dialog>
+  <dialog class="mobile-booking" aria-label="Онлайн-запись Unika"><div class="mobile-booking-header"><span>Запись в Unika</span><button type="button" class="mobile-booking-close" aria-label="Закрыть онлайн-запись"><Icon name="close"/></button></div><iframe title="Онлайн-запись YCLIENTS" data-src="https://b242277.yclients.ru/" allow="payment"/></dialog>
   <script>
    import gsap from 'gsap';
+   const mobileBooking=document.querySelector<HTMLDialogElement>('.mobile-booking')!;
+   const bookingFrame=mobileBooking.querySelector<HTMLIFrameElement>('iframe')!;
+   let bookingTrigger:HTMLElement|null=null;
+   const closeMobileBooking=()=>{mobileBooking.classList.remove('is-open');setTimeout(()=>{mobileBooking.close();document.body.classList.remove('booking-open');bookingTrigger?.focus({preventScroll:true});},matchMedia('(prefers-reduced-motion: reduce)').matches?0:280);};
+   document.addEventListener('click',event=>{const link=(event.target as Element).closest<HTMLElement>('.ms_booking');if(!link||!matchMedia('(max-width:650px)').matches)return;event.preventDefault();event.stopImmediatePropagation();bookingTrigger=link;if(!bookingFrame.src)bookingFrame.src=bookingFrame.dataset.src!;mobileBooking.showModal();document.body.classList.add('booking-open');requestAnimationFrame(()=>requestAnimationFrame(()=>mobileBooking.classList.add('is-open')));},true);
+   mobileBooking.querySelector('.mobile-booking-close')!.addEventListener('click',closeMobileBooking);
+   mobileBooking.addEventListener('cancel',event=>{event.preventDefault();closeMobileBooking();});
    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
    const intro = document.querySelector<HTMLElement>('.intro');
    const playIntro = () => {
@@ -189,6 +197,7 @@ const works = [{image:worksLashes,label:'Выразительный взгляд
   <script is:inline src="https://w242277.yclients.ru/widgetJS" charset="UTF-8" defer></script>
  </body>
 </html>
+
 
 
 
