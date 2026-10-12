@@ -5,3 +5,4 @@ dist/
 preview-*.png
 hero-option-*.jpg
 .openai/
+widget-inspect.tmp
