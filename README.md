@@ -23,3 +23,6 @@ Brand assets: WhatsApp/VK/Instagram SVG from Simple Icons (cdn.simpleicons.org);
 - service-manicure.jpg: https://i9.photo.2gis.com/images/branch/50/7036874426451479_41b7.jpg
 - works-lashes.jpg: https://i2.photo.2gis.com/images/branch/0/30258560084663731_0fb1.jpg
 - intro-manicure-detail.jpg: https://i6.photo.2gis.com/photo-gallery/c1ef2c74-8443-4f48-b7cc-61c3009c7ca4.jpg
+
+- intro-burgundy.jpg: https://i7.photo.2gis.com/images/branch/50/7036874444552006_c26c.jpg
+- works-french.jpg: https://i6.photo.2gis.com/photo-gallery/cd83563b-9e73-45ee-abc5-d7c01c69b1f3.jpg

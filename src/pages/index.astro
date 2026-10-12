@@ -7,7 +7,8 @@ import introManicureDetail from '../assets/intro-manicure-detail.jpg';
 import serviceLashes from '../assets/service-lashes.jpg';
 import worksLashes from '../assets/works-lashes.jpg';
 import serviceManicure from '../assets/service-manicure.jpg';
-import worksRoom from '../assets/works-room.jpg';
+import worksFrench from '../assets/works-french.jpg';
+import introBurgundy from '../assets/intro-burgundy.jpg';
 import lashes from '../assets/lashes.jpg';
 import nails from '../assets/nails.jpg';
 import design from '../assets/design.jpg';
@@ -22,7 +23,7 @@ const services = [
  {n:'02',title:'Маникюр и педикюр',text:'Уход, покрытие и дизайн. Нежный нюд, любимый цвет или маленький эксперимент.',image:serviceManicure,items:[{name:'Маникюр с гель-лаком',price:'от 2 200 ₽'},{name:'Японский маникюр',price:'от 1 900 ₽'},{name:'Полный педикюр с покрытием',price:'от 3 100 ₽'}]},
  {n:'03',title:'Брови',text:'Форма и оттенок, которые подчёркивают ваш взгляд. Коррекция, окрашивание и ламинирование.',image:portrait,items:[{name:'Коррекция без окрашивания',price:'1 200 ₽'},{name:'Коррекция с окрашиванием',price:'1 800 ₽'},{name:'Ламинирование с коррекцией',price:'2 200 ₽'}]},
 ];
-const works = [{image:worksLashes,label:'Выразительный взгляд',type:'Ресницы'},{image:design,label:'Маленькое произведение',type:'Дизайн ногтей'},{image:worksSilver,label:'Красота в деталях',type:'Маникюр'},{image:worksRoom,label:'Время для себя',type:'Пространство Unika'}];
+const works = [{image:worksLashes,label:'Выразительный взгляд',type:'Ресницы'},{image:design,label:'Маленькое произведение',type:'Дизайн ногтей'},{image:worksSilver,label:'Красота в деталях',type:'Маникюр'},{image:worksFrench,label:'Молочный оттенок и объёмный декор',type:'Дизайн ногтей'}];
 ---
 <!doctype html>
 <html lang="ru">
@@ -63,7 +64,7 @@ const works = [{image:worksLashes,label:'Выразительный взгляд
      <svg class="botanical botanical-right" viewBox="0 0 150 220" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M35 215C55 150 80 90 112 15M60 145C20 145 10 112 18 92c35 7 48 26 42 53ZM80 99C105 100 138 77 137 48c-36 1-57 21-57 51ZM92 62C65 58 62 32 69 12c25 8 30 23 23 50Z"/></svg>
      <div class="intro-detail reveal"><Image src={introManicureDetail} alt="Нюдовый маникюр с тонким чёрным дизайном. работа мастера Unika" width={500} format="webp" loading="lazy"/><span>Нюдовый маникюр с тонким дизайном</span></div>
      <div class="studio-copy reveal"><span class="eyebrow">ЗНАКОМЬТЕСЬ С UNIKA</span><h2>От нового оттенка<br/><em>до нового образа.</em></h2><p>Любимый оттенок маникюра, выразительные ресницы и аккуратные брови. Соберите свой образ или начните с маленькой детали.</p><a class="studio-book" href={booking} target="_blank" rel="noopener"><span class="booking-medallion"><Icon name="calendar"/></span><span><strong>Записаться в Unika</strong><small>Выберите услугу и удобное время</small></span></a></div>
-     <div class="intro-room reveal"><Image src={interior} alt="Пространство салона Unika beauty" width={600} format="webp" loading="lazy"/><span>Кресла для процедур с ресницами</span></div>
+     <div class="intro-room reveal"><Image src={introBurgundy} alt="Нюдовый маникюр с бордовыми акцентами. работа мастера Unika" width={600} format="webp" loading="lazy"/><span>Нюдовый маникюр с бордовыми акцентами</span></div>
     </div>
     <div class="section-heading reveal"><span class="eyebrow">УСЛУГИ СТУДИИ</span><h2>С чего <em>начнём?</em></h2></div>
     <div class="service-list">
@@ -77,11 +78,11 @@ const works = [{image:worksLashes,label:'Выразительный взгляд
 
    </section>
    <section id="contacts" class="section contacts">
-    <div class="section-top reveal"><span class="eyebrow">ДО ВСТРЕЧИ В UNIKA</span><span class="small-note">ВАШЕ ЗНАКОМЬТЕСЬ С UNIKA</span></div>
-    <div class="contact-grid"><figure class="contact-photo reveal"><Image src={studioRoom} alt="Интерьер Unika beauty" widths={[500,850,1100]} sizes="(max-width: 650px) 86vw, 40vw" format="webp" loading="lazy"/><figcaption><span>ЖДЁМ ВАС В UNIKA</span><strong>Ваше место<br/>для себя.</strong><small>Якутск / Пояркова, 20 / 2 этаж</small></figcaption></figure><div class="contact-invite reveal"><h2>Выберите день.<br/><em>Мы ждём вас.</em></h2><p>Выберите услугу, мастера и удобное время.<br/>Мы будем ждать вас в Unika.</p><a class="button light" href={booking} target="_blank" rel="noopener">Записаться онлайн <Icon name="calendar"/></a></div><div class="contact-details reveal"><div><span class="eyebrow">МЫ РЯДОМ</span><a href={map} target="_blank" rel="noopener">Якутск, Пояркова, 20 <Icon name="external"/></a><p>2 этаж / по предварительной записи</p></div><div><span class="eyebrow">НА СВЯЗИ</span><a href="tel:+79681546888">+7 (968) 154-68-88</a><div class="socials"><a href="https://wa.me/79681546888" target="_blank" rel="noopener"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/whatsapp.svg`} width="22" height="22" alt="" loading="lazy"/> WhatsApp</a><a href="https://vk.com/club211347468" target="_blank" rel="noopener"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/vk.svg`} width="22" height="22" alt="" loading="lazy"/> ВКонтакте</a><a href="https://max.ru/u/f9LHodD0cOJZDHc6v5T6t-n5Vy3R4MgUCg2Fr0aiDt-TqEIhgaEBXf84h7I" target="_blank" rel="noopener"><Image src={maxLogo} class="brand-icon" width={24} height={24} alt="" format="webp" loading="lazy"/> MAX</a><span class="social-placeholder" role="link" aria-disabled="true" aria-label="Instagram, ссылка пока не подключена" title="Ссылка на Instagram пока не подключена"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/instagram.svg`} width="22" height="22" alt="" loading="lazy"/> Instagram</span></div></div><a class="route" href="https://2gis.ru/yakutsk/directions/points/%7C129.72781%2C62.033743%3B70000001020753520" target="_blank" rel="noopener"><Icon name="external"/><div>Построить маршрут<small>Открыть в 2ГИС</small></div></a></div></div>
+    <div class="section-top reveal"><span class="eyebrow">ДО ВСТРЕЧИ В UNIKA</span><span class="small-note">ЗАПИСЬ И КОНТАКТЫ</span></div>
+    <div class="contact-grid"><figure class="contact-photo reveal"><Image src={studioRoom} alt="Интерьер Unika beauty" widths={[500,850,1100]} sizes="(max-width: 650px) 86vw, 40vw" format="webp" loading="lazy"/><figcaption><span>ЖДЁМ ВАС В UNIKA</span><strong>Наш салон<br/>на Пояркова.</strong><small>Якутск / Пояркова, 20 / 2 этаж</small></figcaption></figure><div class="contact-invite reveal"><h2>Выберите день.<br/><em>Мы ждём вас.</em></h2><p>Выберите услугу, мастера и удобное время.<br/>Мы будем ждать вас в Unika.</p><a class="button light" href={booking} target="_blank" rel="noopener">Записаться онлайн <Icon name="calendar"/></a></div><div class="contact-details reveal"><div><span class="eyebrow">МЫ РЯДОМ</span><a href={map} target="_blank" rel="noopener">Якутск, Пояркова, 20 <Icon name="external"/></a><p>2 этаж / по предварительной записи</p></div><div><span class="eyebrow">НА СВЯЗИ</span><a href="tel:+79681546888">+7 (968) 154-68-88</a><div class="socials"><a href="https://wa.me/79681546888" target="_blank" rel="noopener"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/whatsapp.svg`} width="22" height="22" alt="" loading="lazy"/> WhatsApp</a><a href="https://vk.com/club211347468" target="_blank" rel="noopener"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/vk.svg`} width="22" height="22" alt="" loading="lazy"/> ВКонтакте</a><a href="https://max.ru/u/f9LHodD0cOJZDHc6v5T6t-n5Vy3R4MgUCg2Fr0aiDt-TqEIhgaEBXf84h7I" target="_blank" rel="noopener"><Image src={maxLogo} class="brand-icon" width={24} height={24} alt="" format="webp" loading="lazy"/> MAX</a><span class="social-placeholder" role="link" aria-disabled="true" aria-label="Instagram, ссылка пока не подключена" title="Ссылка на Instagram пока не подключена"><img class="brand-icon" src={`${import.meta.env.BASE_URL}/brands/instagram.svg`} width="22" height="22" alt="" loading="lazy"/> Instagram</span></div></div><a class="route" href="https://2gis.ru/yakutsk/directions/points/%7C129.72781%2C62.033743%3B70000001020753520" target="_blank" rel="noopener"><Icon name="external"/><div>Построить маршрут<small>Открыть в 2ГИС</small></div></a></div></div>
     <div class="map-panel reveal"><iframe title="Расположение Unika beauty на карте" src="https://yandex.ru/map-widget/v1/?ll=129.72781%2C62.033743&amp;z=17&amp;pt=129.72781%2C62.033743%2Cpm2rdm" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href={map} target="_blank" rel="noopener">Unika beauty / Пояркова, 20 <Icon name="pin"/></a></div>
     <div class="footer-ending">
-     <div class="footer-brand reveal" aria-hidden="true">UNIKA<span>beauty studio<br/><i>Время для себя.</i></span></div>
+     <div class="footer-brand reveal" aria-hidden="true">UNIKA<span>beauty studio<br/><i>Маникюр, ресницы и брови.</i></span></div>
      <div class="footer-info"><div class="reveal"><span class="eyebrow">ВАША UNIKA</span><p>Маникюр и педикюр<br/>Ресницы и брови</p></div><div class="reveal"><span class="eyebrow">ЗАГЛЯНИТЕ К НАМ</span><p>Якутск, Пояркова, 20<br/>2 этаж, по предварительной записи</p><a class="footer-phone" href="tel:+79681546888">+7 (968) 154-68-88</a></div><nav class="reveal" aria-label="Навигация в подвале"><a href="#services">Выбрать услугу</a><a href="#works">Посмотреть работы</a><a href={booking} target="_blank" rel="noopener">Записаться онлайн <Icon name="calendar"/></a></nav></div>
      <footer><span>© 2026 UNIKA BEAUTY</span><span>Демонстрационная концепция / не официальный сайт</span><button id="replay">Повторить вступление <Icon name="replay"/></button></footer>
     </div>
@@ -187,6 +188,7 @@ const works = [{image:worksLashes,label:'Выразительный взгляд
   </script>
  </body>
 </html>
+
 
 
 
